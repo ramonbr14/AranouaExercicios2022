@@ -1,0 +1,104 @@
+package br.edu.ifam.aranoura.questao01;
+
+import javax.swing.JOptionPane;
+
+/*
+ * Exercício 1
+Desenvolver uma classe Java chamada Apolice com os seguintes atributos: nomeSegurado, 
+	idade e valorPremio. A classe Apolice deverá conter os seguintes métodos:
+Método:
+	
+	- imprimir(): Este método não retorna valor e deverá mostrar na tela todos os
+		atributos da classe Apolice.
+
+	- calcularPremioApolice(): Este método não retorna valor e deverá calcular o valor do prêmio
+		seguindo as seguintes regras: caso a idade seja maior ou igual a 18 e
+		menor ou igual a 25 anos, use a fórmula: valorPremio +=
+		(valorPremio*20)/100. Quando a idade for superior a 25 e menor ou
+		igual a 36 anos, use a fórmula: valorPremio += (valorPremio*15)/100.
+		Quando a idade for superior a 36, use a fórmula: valorPremio +=
+		(valorPremio*10)/100.
+ 
+	- oferecerDesconto(): Este método não retorna valor, mas recebe o parâmetro cidade, que irá
+		conter o nome da cidade para o cálculo do desconto. Caso a cidade
+		seja Curitiba, dê um desconto no valor do prêmio de 20%. Caso seja Rio
+		de Janeiro, dê um desconto no valor do prêmio de 15%. Caso seja São
+		Paulo, dê um desconto no valor do prêmio de 10%. Caso seja Belo
+		Horizonte dê um desconto no valor do prêmio de 5%. Para realizar a
+		comparação de strings neste exercício utilizar o método equals().
+ 
+*/
+
+public class Apolice {
+	//Variaveis da classe Apolice
+	private String nomeSegurado = "";
+	private int	idade;
+	private double valorPremio;
+	
+	
+	//Construtores
+	public Apolice() {
+		super();
+	}
+	public Apolice(String nomeSegurado, int idade, double valorPremio) {
+		super();
+		this.nomeSegurado = nomeSegurado;
+		this.idade = idade;
+		this.valorPremio = valorPremio;
+	}
+
+	//Metodos Manuais: São metodos criados manualmente.
+	public void imprimir(String nome, int idade, double valor){
+		String message = "Nome do Segurado: "+nomeSegurado+",\ntem "+idade+" anos, "
+				+"\n Tem um premio no valor atual de \nR$ "+valorPremio;
+		String title = "ARENDELLE SEGUROS S/A";
+		JOptionPane.showConfirmDialog(null, message, title, 0);
+	}
+	
+	public void calcularValorPremio(Apolice apolice){
+		Apolice ap = apolice;
+		if(ap.getIdade()>36) {
+			ap.setValorPremio(valorPremio+=(valorPremio*10)/100);
+		}else if(ap.getIdade()>25) {
+			ap.setValorPremio(valorPremio+=(valorPremio*15)/100);
+		}else if(ap.getIdade()>=18) {
+			ap.setValorPremio(valorPremio+=(valorPremio*20)/100);
+		}
+		else {
+			JOptionPane.showConfirmDialog(null,"Não se paga premio a menores de idade");
+		}
+		String message = "Nome do Segurado: "+nomeSegurado+",\ntem "+idade+" anos, "
+				+"\n teve o valor do premio atualizao \nR$ "+valorPremio;
+		String title = "ARENDELLE SEGUROS S/A";
+		JOptionPane.showConfirmDialog(null, message, title, 0);
+	}
+	
+	public void Desconto(){
+		
+	}
+
+	//getter e setter
+	public String getNomeSegurado() {
+		return nomeSegurado;
+	}
+
+	public void setNomeSegurado(String nomeSegurado) {
+		this.nomeSegurado = nomeSegurado;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public double getValorPremio() {
+		return valorPremio;
+	}
+
+	public void setValorPremio(double valorPremio) {
+		this.valorPremio = valorPremio;
+	}
+}
