@@ -34,7 +34,8 @@ public class Apolice {
 	private String nomeSegurado = "";
 	private int	idade;
 	private double valorPremio;
-	
+	private String cidade;
+	String title = "ARENDELLE SEGUROS S/A";
 	
 	//Construtores
 	public Apolice() {
@@ -53,6 +54,7 @@ public class Apolice {
 				+"\n Tem um premio no valor atual de \nR$ "+valorPremio;
 		String title = "ARENDELLE SEGUROS S/A";
 		JOptionPane.showConfirmDialog(null, message, title, 0);
+		System.out.println(message);
 	}
 	
 	public void calcularValorPremio(Apolice apolice){
@@ -66,15 +68,50 @@ public class Apolice {
 		}
 		else {
 			JOptionPane.showConfirmDialog(null,"Não se paga premio a menores de idade");
+			System.out.println("Não se paga premio a menores de idade");
 		}
 		String message = "Nome do Segurado: "+nomeSegurado+",\ntem "+idade+" anos, "
 				+"\n teve o valor do premio atualizao \nR$ "+valorPremio;
 		String title = "ARENDELLE SEGUROS S/A";
 		JOptionPane.showConfirmDialog(null, message, title, 0);
+		System.out.println(message);
 	}
 	
-	public void Desconto(){
-		
+	public void Desconto(Apolice apolice){
+		 Apolice ap = apolice;
+		 switch (ap.getCidade()) {
+		 	case "Curitiba":
+				apolice.setValorPremio(apolice.getValorPremio()-(apolice.getValorPremio()*0.2));
+				mensagem(apolice);
+			break;
+			
+		 	case "Rio de Janeiro":
+		 		apolice.setValorPremio(apolice.getValorPremio()-(apolice.getValorPremio()*0.15));
+		 		mensagem(apolice);
+		 	break;
+		 	
+		 	case "São Paulo":
+			apolice.setValorPremio(apolice.getValorPremio()-(apolice.getValorPremio()*0.1));
+			mensagem(apolice);
+		break;
+		case "Belo Horizonte":
+			apolice.setValorPremio(apolice.getValorPremio()-(apolice.getValorPremio()*0.05));
+			mensagem(apolice);
+		break;
+		default:
+			JOptionPane.showConfirmDialog(null,apolice.getCidade()+" não possui desconto", title, 0);
+			System.out.println(apolice.getCidade()+" não possui desconto");
+			break;
+		}
+	}
+	
+	@SuppressWarnings("unused")
+	private void mensagem(Apolice apolice) {
+		String message = "Para "+apolice.getNomeSegurado()+",\nPor morar em "+apolice.getCidade()
+							+", o premio será de: R$ "+apolice.getValorPremio();
+		String title = "ARENDELLE SEGUROS S/A";
+		JOptionPane.showConfirmDialog(null, message, title, 0);
+		System.out.println(title+" informa: "+message);
 	}
 
 	//getter e setter
@@ -101,4 +138,12 @@ public class Apolice {
 	public void setValorPremio(double valorPremio) {
 		this.valorPremio = valorPremio;
 	}
+	public String getCidade() {
+		return cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	
+	
 }
