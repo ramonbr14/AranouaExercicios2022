@@ -56,7 +56,7 @@ public class Apolice {
 		JOptionPane.showConfirmDialog(null, message, title, 0);
 		System.out.println(message);
 	}
-	
+	//Calculando o valor do premio conforme a idade
 	public void calcularValorPremio(Apolice apolice){
 		Apolice ap = apolice;
 		if(ap.getIdade()>36) {
@@ -76,7 +76,7 @@ public class Apolice {
 		JOptionPane.showConfirmDialog(null, message, title, 0);
 		System.out.println(message);
 	}
-	
+	//Define o Desconto a ser aplicado a apolice conforme a cidade
 	public void Desconto(Apolice apolice){
 		 Apolice ap = apolice;
 		 switch (ap.getCidade()) {
@@ -104,7 +104,7 @@ public class Apolice {
 			break;
 		}
 	}
-	
+	//Impressão padrão para as mensagens
 	@SuppressWarnings("unused")
 	private void mensagem(Apolice apolice) {
 		String message = "Para "+apolice.getNomeSegurado()+",\nPor morar em "+apolice.getCidade()
