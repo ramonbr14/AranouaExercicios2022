@@ -6,7 +6,7 @@ import java.util.Vector;
 
 public class VetorUnidimensional implements InterfaceDimensao{
 
-	private Array dim1;
+	private Array dim1[] ;
 	protected int linha;
 	
 	//Construtores
@@ -27,19 +27,34 @@ public class VetorUnidimensional implements InterfaceDimensao{
 	}
 
 	//Metodos Manuais
-	public void adicionar(Vector vex,) throws MyClassException {
-		if(vex.size()>=linha) {
+	@SuppressWarnings("null")
+	public void adicionar(int valor) throws MyClassException {
+		dim1.setInt(dim1, 0, valor);
+	}
+	/*
+	 public void adicionar(@SuppressWarnings("rawtypes") VetorUnidimensional vex,int valor) throws MyClassException {
+	 
+		if(((List<Integer>) vex).size()>=linha) {
 			System.out.println("Aviso: Risco de sobreposi��o de valores");
 		}else {
-			((Vector<Integer>) vex).add();
+			((List<Integer>) vex).add(valor);
 		}
-	}
+	}*/
 
-	public void imprimir(Vector<Integer>vex) {
-		String imp = "";
+	public void imprimir(Vector<Integer> vex) {
 		System.out.print("Vetor: ");
 		for(int i=0;i<=vex.size();i++) {
-			imp += vex.get(i);
 		}
 	}
+	public Array getDim1() {
+		return dim1;
+	}
+	public void setDim1(Array dim1) {
+		this.dim1 = dim1;
+	}
+
+
 }
+
+
+
