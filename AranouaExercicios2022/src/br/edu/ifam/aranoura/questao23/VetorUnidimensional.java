@@ -1,12 +1,13 @@
 package br.edu.ifam.aranoura.questao23;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
 public class VetorUnidimensional implements InterfaceDimensao{
 
-	private Array dim1[] ;
+	private Vector<Integer> dim1;
 	protected int linha;
 	
 	//Construtores
@@ -29,7 +30,7 @@ public class VetorUnidimensional implements InterfaceDimensao{
 	//Metodos Manuais
 	@SuppressWarnings("null")
 	public void adicionar(int valor) throws MyClassException {
-		dim1.setInt(dim1, 0, valor);
+		//Descobrir como adicionar o Valor no vector
 	}
 	/*
 	 public void adicionar(@SuppressWarnings("rawtypes") VetorUnidimensional vex,int valor) throws MyClassException {
