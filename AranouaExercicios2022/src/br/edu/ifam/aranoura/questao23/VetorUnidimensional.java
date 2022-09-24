@@ -9,7 +9,7 @@ public class VetorUnidimensional implements InterfaceDimensao{
 	private Array dim1;
 	protected int linha;
 	
-	
+	//Construtores
 	public VetorUnidimensional() {
 		super();
 		Vector<Integer> vex = new Vector<Integer>();
@@ -27,11 +27,11 @@ public class VetorUnidimensional implements InterfaceDimensao{
 	}
 
 	//Metodos Manuais
-	public void adicionar(int valor) throws MyClassException {
+	public void adicionar(Vector vex,) throws MyClassException {
 		if(vex.size()>=linha) {
-			System.out.println("Aviso: Risco de sobreposição de valores");
+			System.out.println("Aviso: Risco de sobreposiï¿½ï¿½o de valores");
 		}else {
-			((Vector<Integer>) vex).add(valor);
+			((Vector<Integer>) vex).add();
 		}
 	}
 
