@@ -7,8 +7,9 @@ import java.util.Vector;
 
 public class VetorUnidimensional implements InterfaceDimensao{
 
-	private Vector<Integer> dim1;
+	private int[] dim1;
 	protected int linha;
+	int i = 0;
 	
 	//Construtores
 	public VetorUnidimensional() {
@@ -30,30 +31,34 @@ public class VetorUnidimensional implements InterfaceDimensao{
 	//Metodos Manuais
 	@SuppressWarnings("null")
 	public void adicionar(int valor) throws MyClassException {
-		//Descobrir como adicionar o Valor no vector
-	}
-	/*
-	 public void adicionar(@SuppressWarnings("rawtypes") VetorUnidimensional vex,int valor) throws MyClassException {
-	 
-		if(((List<Integer>) vex).size()>=linha) {
-			System.out.println("Aviso: Risco de sobreposi��o de valores");
-		}else {
-			((List<Integer>) vex).add(valor);
+		
+		try {
+			dim1 = new int[tamanho];
+			dim1[i]=valor;
+			i++;
+			System.out.println("PASSOU"+ dim1[i-1]);
+			//throw new Exception();
+		}catch (Exception e) {
+			System.out.println(e.toString());
 		}
-	}*/
+		imprimir(dim1);
+	}
 
-	public void imprimir(Vector<Integer> vex) {
+	public void imprimir(int[] vex) {
+		dim1 = vex;
 		System.out.print("Vetor: ");
-		for(int i=0;i<=vex.size();i++) {
+		for(int i=0;i<vex.length;i++) {
+			 System.out.print(dim1[i]+", ");
 		}
 	}
-	public Array getDim1() {
+	public int[] getDim1() {
 		return dim1;
 	}
-	public void setDim1(Array dim1) {
+	public void setDim1(int[] dim1) {
 		this.dim1 = dim1;
 	}
 
+	
 
 }
 
