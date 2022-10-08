@@ -7,10 +7,10 @@ import java.util.Vector;
 
 public class VetorUnidimensional implements InterfaceDimensao{
 
-	private int[] dim1;
+	private int[] dim1 = new int[tamanho];
 	protected int linha;
 	int i = 0;
-	
+		
 	//Construtores
 	public VetorUnidimensional() {
 		super();
@@ -25,7 +25,6 @@ public class VetorUnidimensional implements InterfaceDimensao{
 		}catch(MyClassException e) {
 			System.out.print("Valor fora dos parametros");
 		}
-		
 	}
 
 	//Metodos Manuais
@@ -33,22 +32,23 @@ public class VetorUnidimensional implements InterfaceDimensao{
 	public void adicionar(int valor) throws MyClassException {
 		
 		try {
-			dim1 = new int[tamanho];
+			
 			dim1[i]=valor;
+			System.out.println("\nPASSOU: "+ dim1[i]);
 			i++;
-			System.out.println("PASSOU"+ dim1[i-1]);
+			System.out.println("\nvalor do i: "+ i);
 			//throw new Exception();
+			
 		}catch (Exception e) {
-			System.out.println(e.toString());
+			System.out.println("Alerta Risco de Sopreposição de valores no veto");
 		}
 		imprimir(dim1);
 	}
 
 	public void imprimir(int[] vex) {
-		dim1 = vex;
-		System.out.print("Vetor: ");
+		System.out.print("VetorB"+i+": ");
 		for(int i=0;i<vex.length;i++) {
-			 System.out.print(dim1[i]+", ");
+			 System.out.print(vex[i]+", ");
 		}
 	}
 	public int[] getDim1() {

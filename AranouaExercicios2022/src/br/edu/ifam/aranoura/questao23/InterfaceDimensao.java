@@ -8,7 +8,6 @@ public interface InterfaceDimensao{
 		
 	}
 	public static void adicionar(int valor) throws MyClassException {
-		valor = valor;
 		throw new MyClassException(valor);
 		
 		

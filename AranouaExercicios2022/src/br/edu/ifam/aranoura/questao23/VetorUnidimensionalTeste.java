@@ -14,8 +14,11 @@ public class VetorUnidimensionalTeste implements InterfaceDimensao {
 		vex1.adicionar(10);
 		vex1.adicionar(20);
 		vex1.adicionar(30);
-		//dim = vex1.getDim1();
-		//vex1.imprimir(dim);
+		
+		vex2.adicionar(40);
+		vex2.adicionar(50);
+		vex2.adicionar(60);
+		
 		System.out.println("ENCERRADO"); 
 	}
 
