@@ -1,8 +1,5 @@
 package br.edu.ifam.aranoura.questao23;
 
-import java.lang.reflect.Array;
-import java.util.Vector;
-
 public class VetorUnidimensionalTeste implements InterfaceDimensao {
 
 	public static void main(String[] args) throws MyClassException {

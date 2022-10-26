@@ -1,8 +1,5 @@
 package br.edu.ifam.aranoura.questao23;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 public class VetorUnidimensional implements InterfaceDimensao{

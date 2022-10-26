@@ -1,6 +1,6 @@
 package br.edu.ifam.aranoura.questao23;
 
-import java.beans.ExceptionListener;
+//import java.beans.ExceptionListener;
 
 public interface InterfaceDimensao{
 	int tamanho = 2;

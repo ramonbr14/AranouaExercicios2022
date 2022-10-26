@@ -42,7 +42,7 @@ public class Acampamento {
 	}
 	
 	public void separarGrupo(Acampamento aluno){
-		if(aluno.getIdade()>21) {
+		/*if(aluno.getIdade()>21) {
 			aluno.setEquipe("C");
 		}else if(aluno.getIdade()>) {
 			
@@ -51,7 +51,7 @@ public class Acampamento {
 		}else if(aluno.getIdade()>)
 	}else 
 		
-	}
+	}*/}
 
 
 	public Acampamento cadastraAcampamento(Acampamento aluno){
@@ -72,8 +72,8 @@ public class Acampamento {
 		return equipe;
 	}
 
-	public void setEquipe(String string) {
-		string = string;
+	public void setEquipe(char equipe) {
+		this.equipe = equipe;
 	}
 
 	public int getIdade() {
