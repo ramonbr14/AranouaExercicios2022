@@ -9,7 +9,7 @@ public class Acampamento {
 	private int idade;
 	
 	String message = "";
-	String title = "";
+	String title = "Acampamento das Amazonas";
 	
 	//Construtores //Constructors
 	public Acampamento() {
@@ -34,27 +34,30 @@ public class Acampamento {
 	//Manual Metods
 	
 	public void imprimir(Acampamento aluno){
-		separarGrupo(aluno);
-		
-		message = "A Princesa Guerreira: "+aluno.nome+" tem "+aluno.idade+" de idade";
-		title = "Acampamento das Amazonas";
+		if(equipe==0){
+		message = "A Princesa Guerreira: "+aluno.nome+" \n tem "+aluno.idade+" de idade";
+		}else{
+		message = "A Princesa Guerreira: "+aluno.nome+" \n tem "+aluno.idade+" de idade \n "+
+		"e pertence a equipe: "+aluno.equipe;	
+		}
 		JOptionPane.showConfirmDialog(null, message, title, 0, JOptionPane.WARNING_MESSAGE);
+		System.out.println(message);
 	}
 	
 	public void separarGrupo(Acampamento aluno){
 		if(aluno.getIdade()>=21) {
 			aluno.setEquipe('C');
 		}else if(aluno.getIdade()>=11) {
-			aluno.setEquipe('C');
+			aluno.setEquipe('B');
 		}else if(aluno.getIdade()>=6) {
-			aluno.setEquipe('C');
+			aluno.setEquipe('A');
 		}else{
-			message = "A Princesa Guerreira: "+aluno.nome+" não tem idade para integrar uma equipe";
-			title = "Acampamento das Amazonas";
+			message = "A Princesa Guerreira: "+aluno.nome+" \n não tem idade para integrar uma equipe";
 			JOptionPane.showConfirmDialog(null, message, title, 0, JOptionPane.WARNING_MESSAGE);
+			System.out.println(message);
 		} 
 		
-	}}
+	}
 
 
 	public Acampamento cadastraAcampamento(Acampamento aluno){
