@@ -37,21 +37,24 @@ public class Acampamento {
 		separarGrupo(aluno);
 		
 		message = "A Princesa Guerreira: "+aluno.nome+" tem "+aluno.idade+" de idade";
-		title = "Acampamento da Amazonas";
+		title = "Acampamento das Amazonas";
 		JOptionPane.showConfirmDialog(null, message, title, 0, JOptionPane.WARNING_MESSAGE);
 	}
 	
 	public void separarGrupo(Acampamento aluno){
-		/*if(aluno.getIdade()>21) {
-			aluno.setEquipe("C");
-		}else if(aluno.getIdade()>) {
-			
-		}else if(aluno.getIdade()>) {
-			
-		}else if(aluno.getIdade()>)
-	}else 
+		if(aluno.getIdade()>=21) {
+			aluno.setEquipe('C');
+		}else if(aluno.getIdade()>=11) {
+			aluno.setEquipe('C');
+		}else if(aluno.getIdade()>=6) {
+			aluno.setEquipe('C');
+		}else{
+			message = "A Princesa Guerreira: "+aluno.nome+" não tem idade para integrar uma equipe";
+			title = "Acampamento das Amazonas";
+			JOptionPane.showConfirmDialog(null, message, title, 0, JOptionPane.WARNING_MESSAGE);
+		} 
 		
-	}*/}
+	}}
 
 
 	public Acampamento cadastraAcampamento(Acampamento aluno){
@@ -83,7 +86,4 @@ public class Acampamento {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	
-	
-	
 }
