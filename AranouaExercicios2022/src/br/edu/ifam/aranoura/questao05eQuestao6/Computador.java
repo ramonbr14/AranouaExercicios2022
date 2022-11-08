@@ -1,11 +1,13 @@
 package br.edu.ifam.aranoura.questao05eQuestao6;
 
+import javax.swing.JOptionPane;
+
 public class Computador {
-        private String marcar;
-        private String cor;
-        private String modelo;
+        private String marcar = "";
+        private String cor = "";
+        private String modelo ="";
         private String numeroSerie;
-        private Double preco;
+        private Double preco = 0.0;
         
 
         String message = "";
@@ -31,15 +33,17 @@ public class Computador {
                 this.preco = preco;
         }
 
-        // Metodos Manurais]
+        // Metodos Manurais
         public void imprimir(Computador comp){
-                message = "Computador: "+comp.numeroSerie+
-                        "\nMarca: "+comp.marcar+
-                        "\nModelo: "+comp.modelo+
-                        "\nCor: "+comp.cor+
-                        "\nPreco: R$ "+comp.preco.toString();
-                
-        }
+                message = "Computador: "+comp.getNumeroSerie()+
+                        "\nMarca: "+comp.getMarcar()+
+                        "\nModelo: "+comp.getModelo()+
+                        "\nCor: "+comp.getCor()+
+                        "\nPreco: R$ "+comp.getPreco();
+
+                JOptionPane.showConfirmDialog(null, message, title, 0, JOptionPane.WARNING_MESSAGE);
+		System.out.println(message);
+       }
 
         //getters e setters       
         public String getMarcar() {
