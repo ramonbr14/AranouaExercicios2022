@@ -1,5 +1,6 @@
 package br.edu.ifam.aranoura.questao05eQuestao6;
 
+import br.edu.ifam.aranoura.questao05eQuestao6.*;
 
 public class PrincipalComputador {
     
@@ -16,7 +17,7 @@ public class PrincipalComputador {
         Computador cpu0 = new Computador("MICROPC","Dourado", "MIC-098","MICRO545415");
     
         cpu1.imprimir(cpu1);
-        cpu2.imprimir(cpu2);
+        /*cpu2.imprimir(cpu2);
         cpu3.imprimir(cpu3);
         cpu4.imprimir(cpu4);
         cpu5.imprimir(cpu5);
@@ -24,6 +25,6 @@ public class PrincipalComputador {
         cpu7.imprimir(cpu7);
         cpu8.imprimir(cpu8);
         cpu9.imprimir(cpu9);
-        cpu0.imprimir(cpu0);
+        cpu0.imprimir(cpu0);*/
         }
 }

@@ -42,7 +42,39 @@ public class Computador {
                         "\nPreco: R$ "+comp.getPreco();
 
                 JOptionPane.showConfirmDialog(null, message, title, 0, JOptionPane.WARNING_MESSAGE);
-		System.out.println(message);
+		System.out.println("\n"+message+"\n");
+       }
+
+       public void calcularValor(Computador comp){
+                if(comp.getMarcar().equals("HP")){
+                        comp.setPreco(comp.getPreco()+(comp.getPreco()*0.3));
+                }else if(comp.getMarcar().equals("IBM")){
+                        comp.setPreco(comp.getPreco()+(comp.getPreco()*0.5));
+                }
+
+       }
+
+       public boolean alterarValor(double num, Computador comp){
+        
+        if(num==0){
+                return false;
+        }else{
+                comp.setPreco(num);
+                return true;
+        }
+
+        
+        
+
+       }
+
+       public double numeroAleatorio(){
+        double numero;
+        int min = 1000;
+        int max = 50000;
+        numero = Math.random()*(max-min+1)+min;
+        
+        return numero;
        }
 
         //getters e setters       
