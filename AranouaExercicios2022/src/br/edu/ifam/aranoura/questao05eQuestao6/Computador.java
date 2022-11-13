@@ -22,6 +22,7 @@ public class Computador {
                 this.cor = cor;
                 this.modelo = modelo;
                 this.numeroSerie = numeroSerie;
+                //preco = numeroAleatorio();
         }
 
 
@@ -55,25 +56,23 @@ public class Computador {
        }
 
        public boolean alterarValor(double num, Computador comp){
-        
-        if(num==0){
+        //num = numeroAleatorio();
+        if(num<=0){
+                System.out.println("VALOR NÃO ALTERADO");
                 return false;
         }else{
-                comp.setPreco(num);
+                comp.setPreco(numeroAleatorio());
+                System.out.println("VALOR CORRIGIDO");
                 return true;
         }
 
-        
-        
-
-       }
+        }
 
        public double numeroAleatorio(){
         double numero;
         int min = 1000;
         int max = 50000;
-        numero = Math.random()*(max-min+1)+min;
-        
+        numero = Math.round(Math.random()*(max-min+1)+min);
         return numero;
        }
 
